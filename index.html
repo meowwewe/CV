@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV cá nhân - Giới thiệu bản thân, kỹ năng và kinh nghiệm">
+    <title>CV Cá Nhân</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4a90d9;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            color: #4a90d9;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .contact-info a {
+            color: #4a90d9;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #4a90d9;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .summary p {
+            font-size: 1.05rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        .item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #4a90d9;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .item-date {
+            color: #4a90d9;
+            font-weight: 500;
+        }
+
+        .item-subtitle {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-desc {
+            color: #555;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .skill-category h3 {
+            font-size: 0.95rem;
+            color: #4a90d9;
+            margin-bottom: 0.5rem;
+            border: none;
+            padding: 0;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.3rem 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            border: none;
+            padding: 0;
+            font-size: 1.1rem;
+        }
+
+        .project-card .tech-stack {
+            color: #4a90d9;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Thay thế src bằng đường dẫn ảnh thực tế của bạn -->
+            <img src="https://via.placeholder.com/150" alt="Ảnh đại diện" class="profile-img">
+            <h1>Nguyễn Văn An</h1>
+            <p class="title">Lập Trình Viên Fullstack | Sinh Viên Kỹ Thuật Phần Mềm</p>
+            <div class="contact-info">
+                <span>📧 <a href="mailto:nguyenvanan@email.com">nguyenvanan@email.com</a></span>
+                <span>📱 <a href="tel:+84901234567">+84 90 123 4567</a></span>
+                <span>📍 Hà Nội, Việt Nam</span>
+                <span>🔗 <a href="https://github.com/nguyenvanan" target="_blank">GitHub</a></span>
+                <span>💼 <a href="https://linkedin.com/in/nguyenvanan" target="_blank">LinkedIn</a></span>
+            </div>
+        </header>
+
+        <section class="summary">
+            <h2>Giới Thiệu</h2>
+            <p>
+                Sinh viên năm cuối chuyên ngành Kỹ thuật phần mềm tại Đại học Công nghệ, có đam mê lớn với lập trình web và phát triển ứng dụng.
+                Có kinh nghiệm xây dựng các ứng dụng fullstack sử dụng React, Node.js, và cơ sở dữ liệu PostgreSQL/MySQL.
+                Luôn mong muốn học hỏi công nghệ mới, làm việc nhóm hiệu quả và đóng góp giá trị thực tế cho sản phẩm.
+            </p>
+        </section>
+
+        <section>
+            <h2>Kinh Nghiệm</h2>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Thực tập sinh Fullstack Developer</span>
+                    <span class="item-date">06/2024 - 09/2024</span>
+                </div>
+                <p class="item-subtitle">Công ty TNHH Giải Pháp Số ABC | Hà Nội</p>
+                <p class="item-desc">
+                    • Phát triển và bảo trì các module cho hệ thống quản lý nội bộ sử dụng React + TypeScript<br>
+                    • Tối ưu hiệu năng API, giảm thời gian phản hồi từ 800ms xuống 200ms<br>
+                    • Viết unit test (Jest) và integration test, đạt coverage 85%<br>
+                    • Tham gia code review, áp dụng clean code và Git flow
+                </p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Freelance Web Developer</span>
+                    <span class="item-date">01/2023 - 12/2023</span>
+                </div>
+                <p class="item-subtitle">Dự án riêng / Upwork</p>
+                <p class="item-desc">
+                    • Xây dựng 5+ website landing page, blog, và e-commerce nhỏ cho khách hàng SME<br>
+                    • Sử dụng Next.js, Tailwind CSS, và Vercel cho deployment<br>
+                    • Tích hợp thanh toán VNPAY, MoMo và quản lý đơn hàng cơ bản
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Dự Án Nổi Bật</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Hệ thống Quản Lý Sinh Viên</h3>
+                    <p class="tech-stack">React • Node.js • PostgreSQL • Docker</p>
+                    <p>Ứng dụng web fullstack quản lý sinh viên, điểm số, lớp học. Có phân quyền admin/giảng viên/sinh viên, xuất báo cáo Excel/PDF.</p>
+                </div>
+                <div class="project-card">
+                    <h3>E-commerce Mini</h3>
+                    <p class="tech-stack">Next.js • TypeScript • Prisma • PostgreSQL</p>
+                    <p>Website bán hàng nhỏ với giỏ hàng, thanh toán VNPAY, dashboard admin quản lý sản phẩm/đơn hàng. Deploy trên Vercel.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Task Manager App</h3>
+                    <p class="tech-stack">React Native • Expo • Firebase</p>
+                    <p>Ứng dụng mobile quản lý công việc cá nhân/nhóm: tạo task, nhắc nhở, gán thành viên, theo dõi tiến độ real-time.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Kỹ Năng</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>React, Next.js, TypeScript</li>
+                        <li>Tailwind CSS, Styled Components</li>
+                        <li>Redux Toolkit, React Query</li>
+                        <li>HTML5, CSS3, JavaScript ES6+</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Node.js, Express, NestJS</li>
+                        <li>RESTful API, GraphQL</li>
+                        <li>Authentication (JWT, OAuth2)</li>
+                        <li>WebSocket, Server-Sent Events</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Database & DevOps</h3>
+                    <ul>
+                        <li>PostgreSQL, MySQL, MongoDB</li>
+                        <li>Prisma, TypeORM, Mongoose</li>
+                        <li>Docker, Docker Compose</li>
+                        <li>Git, GitHub Actions, CI/CD</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Khác</h3>
+                    <ul>
+                        <li>Agile/Scrum, Jira, Trello</li>
+                        <li>Testing: Jest, React Testing Library</li>
+                        <li>English: TOEIC 750 (Giao tiếp tốt)</li>
+                        <li>Teamwork, Problem Solving</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Giáo Dục</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Kỹ Sư Kỹ Thuật Phần Mềm</span>
+                    <span class="item-date">2021 - 2025</span>
+                </div>
+                <p class="item-subtitle">Đại học Công nghệ - Đại học Quốc gia Hà Nội</p>
+                <p class="item-desc">
+                    • GPA: 3.6/4.0 | Học bổng khuyến khích 3 năm liên tiếp<br>
+                    • Đồ án tốt nghiệp: "Xây dựng hệ thống gợi ý khóa học học tập cá nhân hóa sử dụng Collaborative Filtering"<br>
+                    • Hoạt động: Thành viên CLB Lập trình, Tổ chức Hackathon sinh viên 2023
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Chứng Chỉ & Giải Thưởng</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">AWS Cloud Practitioner</span>
+                    <span class="item-date">2024</span>
+                </div>
+                <p class="item-desc">Chứng chỉ nền tảng đám mây AWS (CLF-C02)</p>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Giải Nhì Hackathon SV ĐHQG Hà Nội</span>
+                    <span class="item-date">2023</span>
+                </div>
+                <p class="item-desc">Đề tài: "Ứng dụng hỗ trợ người khuyết tật giao tiếp" (React Native + TensorFlow Lite)</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Cập nhật lần cuối: Tháng 10/2024 | Được tạo với HTML/CSS thuần túy</p>
+        </footer>
+    </div>
+</body>
+</html>
